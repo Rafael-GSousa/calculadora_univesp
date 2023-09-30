@@ -4,8 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Univesp</title>
-    <script src="index.js"></script>
+    <!-- <script src="index.js"></script> -->
 </head>
 <body>
+    <form action="">
+        <p>
+            <label for="iAva">Nota do AVA (atividades avaliativas):</label>
+            <input type="number" name="ava" id="iAva" min="0" max="10" step="0.1" required oninput="calcMedia()">
+        </p>
+
+        <p>
+            <label for="iProva">Nota da Prova Regular:</label>
+            <input type="number" name="prova" id="iProva" min="0" max="10" step="0.1" required oninput="calcMedia()">
+        </p>
+
+        <p>
+            <label for="iMedia">Média <span id="parcialFinal"></span>:</label>
+            <output id="iMedia"></output>
+        </p>
+
+        <p>
+            <label for="iStatus">Situação:</label>
+            <output id="iStatus"></output>
+        </p>
+    </form>
+
+    <script>
+        function calcMedia() {
+            const media = iMedia.innerHTML = Number(iAva.value * 0.4) + Number(iProva.value * 0.6);
+
+            if(media >= 5) {
+                parcialFinal.innerHTML = 'Final'
+                iStatus.innerHTML = 'Aprovado(a). Parabéns!'
+            }else{
+                parcialFinal.innerHTML = 'Parcial'
+                iStatus.innerHTML = 'Exame. Boa sorte!'
+            }
+        }
+    </script>
 </body>
 </html>
