@@ -38,7 +38,7 @@ function calcMedia(){
 
 function calcMediaFinal(){
     mdf = (md + Number(nExame.value)) / 2;
-    mediaFinal.innerHTML = mdf;
+    mediaFinal.innerHTML = mdf + ' ==> (Nota do Exame + Média Parcial) / 2';
 
     if(mdf >= 5.0){
         situacaoFinal.innerHTML = 'Essa é sua média final. Aprovado(a)!'
