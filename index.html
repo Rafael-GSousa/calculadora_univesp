@@ -8,34 +8,38 @@
     
 </head>
 <body>
-    <h1>Calculadora de Médias da Univesp</h1>
-    <div>
-        <label for="nAva">Nota do Ava</label>
-        <input type="number" name="ava" id="nAva" min="0" max="10" step="0.1" oninput="mediaAva(), calcMedia()">
-        <output id="mAva"></output>
-    </div>
-
-    <div>
-        <label for="nProva">Nota da Prova</label>
-        <input type="number" name="prova" id="nProva" min="0" max="10" step="0.1" oninput="mediaProva(), calcMedia()">
-        <output id="mProva"></output>
-    </div>
-
-    <div id="container">
-        <output>Média: <span id="media"></span></output>
-        <br>
-        <output>Situação: <span id="situacao"></span></output>
-    </div>
-
-    <div id="container1">
-        <label for="nExame">Nota do Exame</label>
-        <input type="number" name="exame" id="nExame" min="0" max="10" oninput="calcMediaFinal()">
-    </div>
-
-    <div id="container2">
-        <output>Média Final: <span id="mediaFinal"></span></output>
-        <br>
-        <output>Situação: <span id="situacaoFinal"></span></output>
+    <div class="master">
+        <h1>Calculadora de Médias da Univesp</h1>
+        <div>
+            <label for="nAva">Nota do Ava</label>
+            <input type="number" name="ava" id="nAva" min="0" max="10" step="0.1" required>
+            <output id="mAva"></output>
+        </div>
+        <div>
+            <label for="nProva">Nota da Prova</label>
+            <input type="number" name="prova" id="nProva" min="0" max="10" step="0.1" required>
+            <output id="mProva"></output>
+        </div>
+        <div>
+            <button type="button" onclick="mediaAvaProva(), calcMedia()">Calcular Média</button>
+        </div>
+        <div id="container">
+            <output><strong>Média</strong>: <span id="media"></span></output>
+            <br>
+            <output><strong>Situação</strong>: <span id="situacao"></span></output>
+        </div>
+        <div id="container1">
+            <label for="nExame">Nota do Exame</label>
+            <input type="number" name="exame" id="nExame" min="0" max="10" required>
+        </div>
+        <div id="btn-mFinal">
+            <button type="button" onclick="calcMediaFinal()">Calcular Média Final</button>
+        </div>
+        <div id="container2">
+            <output><strong>Média Final</strong>: <span id="mediaFinal"></span></output>
+            <br>
+            <output><strong>Situação</strong>: <span id="situacaoFinal"></span></output>
+        </div>
     </div>
 
     <script src="index.js"></script>
