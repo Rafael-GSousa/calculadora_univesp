@@ -4,126 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Univesp</title>
-    <!-- <script src="index.js"></script> -->
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <form>
-        <div>
-            <label for="iAva">Nota do AVA (atividades avaliativas):</label>
-            <input type="number" name="ava" id="iAva" min="0" max="10" step="0.1" required>
-            <div id="mediaAva"></div>
-        </div>
+    <div>
+        <label for="nAva">Nota do Ava</label>
+        <input type="number" name="ava" id="nAva" min="0" max="10" step="0.1" oninput="mediaAva(), calcMedia()">
+        <output id="mAva"></output>
+    </div>
 
-        <div>
-            <label for="iProva">Nota da Prova Regular:</label>
-            <input type="number" name="prova" id="iProva" min="0" max="10" step="0.1" required>
-            <output id="mediaProva"></output>
-        </div>
+    <div>
+        <label for="nProva">Nota da Prova</label>
+        <input type="number" name="prova" id="nProva" min="0" max="10" step="0.1" oninput="mediaProva(), calcMedia()">
+        <output id="mProva"></output>
+    </div>
 
-        <div>
-            <button id="btnCalc">Calcular Média</button>
-        </div>
+    <div id="container">
+        <output>Média: <span id="media"></span></output>
+        <br>
+        <output>Situação: <span id="situacao"></span></output>
+    </div>
 
-        <div style="border: 1px solid black; width: 300px;">
-            <div>
-                <label for="iMedia">Média <span id="parcialFinal"></span>:</label>
-                <output id="iMedia"></output>
-            </div>
-    
-            <div>
-                <label for="iStatus">Situação:</label>
-                <output id="iStatus"></output>
-            </div>
-        </div>
+    <div id="container1">
+        <label for="nExame">Nota do Exame</label>
+        <input type="number" name="exame" id="nExame" min="0" max="10" oninput="calcMediaFinal()">
+    </div>
 
-        <div>
-    
-            <label for="iExame">Nota do Exame:</label>
-            <input type="number" name="exame" id="iExame" min="0" max="10">
-        </div>
+    <div id="container2">
+        <output>Média Final: <span id="mediaFinal"></span></output>
+        <br>
+        <output>Situação: <span id="situacaoFinal"></span></output>
+    </div>
 
-        <div>
-            <button id="btnExame">Calcular Média Final</button>
-        </div>
-        
-        <div style="border: 1px solid black; width: 300px;">
-            <div>
-                <label for="iMedia">Média Final:</label>
-                <output id="iMedia"></output>
-            </div>
-            <div>
-                <label for="iStatus">Situação:</label>
-                <output id="iStatus"></output>
-            </div>
-        </div>
-    </form>
-<script src="index.js"></script>
-    <!-- <script>
-       
-        function calcMedia() {
-            if(iAva.value != '' && iAva.value <= 10){
-                mediaAva.innerHTML = ' ==> Nota do AVA * 0.4 (40%) ==> ' + Number(iAva.value * 0.4);
-                mediaAva.style.display = 'inline-block'
-                
-            }else{
-                mediaAva.style.display = 'none'
-            }
-
-            if (iProva.value != '' && iProva.value <= 10){
-                mediaProva.innerHTML = ' ==> Nota da Prova * 0.6 (60%) ==> ' + Number(iProva.value * 0.6);
-                mediaProva.style.display = 'inline-block'
-            }else{
-                mediaProva.style.display = 'none'
-            }
-
-            const media = iMedia.innerHTML = Number(iAva.value * 0.4) + Number(iProva.value * 0.6);
-
-            if(media >= 5) {
-                parcialFinal.innerHTML = 'Final'
-                iStatus.innerHTML = 'Aprovado(a). Parabéns!'
-                valida.style.display = 'none'
-            }else{
-                valida.innerHTML = '<label for="iExame">Nota do Exame, caso já tenha: </label><input type="number" name="Exame" id="iExame" min="0" max="10">'
-                valida.style.display = 'block'
-                parcialFinal.innerHTML = 'Parcial'
-                iStatus.innerHTML = 'Exame. Boa sorte!'
-                final.style.display = 'none'
-                const mediaFinal = (Number(iMedia.value) + Number(iExame.value)) / 2;
-            }
-
-
-            // const mediaFinal = (Number(iMedia.value) + Number(iExame.value)) / 2;
-
-            if (iExame.value != '' && iExame.value <= 10){
-               
-                final.style.display = 'block'
-
-                if(mediaFinal >= 5) {
-                    // final.style.display = 'block'
-                    final.innerHTML = `Sua média final é ${mediaFinal} <br>
-                    Status: Aprovado(a). Parabéns!`
-                }else{
-                    // final.style.display = 'block'
-                    final.innerHTML = `Sua média final é ${mediaFinal} <br>
-                    Status: Reprovado(a). Ficou de DP nessa disciplina!`
-                }
-
-            }else{
-                final.style.display = 'none'
-            }
-            
-            
-            // if(mediaFinal >= 5) {
-            //     // final.style.display = 'block'
-            //     final.innerHTML = `Sua média final é ${mediaFinal} <br>
-            //      Status: Aprovado(a). Parabéns!`
-            // }else{
-            //     // final.style.display = 'block'
-            //     final.innerHTML = `Sua média final é ${mediaFinal} <br>
-            //      Status: Reprovado(a). Ficou de DP nessa disciplina!`
-            // }
-
-        }
-    </script> -->
+    <script src="index.js"></script>
 </body>
 </html>
