@@ -37,18 +37,18 @@ function alerta() {
 function mensagem(md, mdf) {
     if (md >= 5) {
         mediaParcial.innerHTML = 'Média Final ==> ' + md;
-        situacao.innerHTML = '<strong>Situação:</strong> <span class="verde">Aprovado(a)!</span>';
+        situacao.innerHTML = '<strong><em>Obs.:</strong> Média AVA + Média Prova</em><br><strong>Situação:</strong> <span class="verde">Aprovado(a)!</span>';
         parte2.style.display = 'none';
     } else if (md < 5 && notaExame.value == '') {
         mediaParcial.innerHTML = 'Média Parcial ==> ' + md;
-        situacao.innerHTML = '<strong>Situação:</strong> <span class="amarelo">Exame!</span>';
+        situacao.innerHTML = '<strong><em>Obs.:</strong> Média AVA + Média Prova</em><br><strong>Situação:</strong> <span class="amarelo">Exame!</span>';
         parte2.style.display = 'block';
     } else if (mdf >= 5) {
         mediaFinal.innerHTML = 'Média Final ==> ' + mdf;
-        situacaoFinal.innerHTML = '<strong>Situação:</strong> <span class="verde">Aprovado(a)!</span>';
+        situacaoFinal.innerHTML = '<strong><em>Obs.:</strong> (Média Parcial + Nota do Exame) / 2</em><br><strong>Situação:</strong> <span class="verde">Aprovado(a)!</span>';
     }else {
         mediaFinal.innerHTML = 'Média Final ==> ' + mdf;
-        situacaoFinal.innerHTML = '<strong>Situação:</strong> <span class="vermelho">Reprovado(a)!</span>';
+        situacaoFinal.innerHTML = '<strong><em>Obs.:</strong> (Média Parcial + Nota do Exame) / 2</em><br><strong>Situação:</strong> <span class="vermelho">Reprovado(a)!</span>';
     }
 }
 
