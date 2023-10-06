@@ -23,20 +23,39 @@ div.master {
     gap: 30px;
 }
 
+div {
+    margin-top: 10px;
+}
+
 button {
     height: 30px;
     background-color: black;
     color: white;
     font-weight: bolder;
 }
-div.master > div {
-    
-}
 
 input {
     width: 35px;
 }
 
-#container, #container1, #container2, #btn-mFinal, #mAva, #mProva {
+#parte2 {
     display: none;
+}
+
+.verde {
+    background-color: darkgreen;
+    color: white;
+    font-weight: bolder;
+}
+
+.amarelo {
+    background-color: yellow;
+    color: darkblue;
+    font-weight: bolder;
+}
+
+.vermelho {
+    background-color: red;
+    color: white;
+    font-weight: bolder;
 }

@@ -9,36 +9,43 @@
 </head>
 <body>
     <div class="master">
-        <h1>Calculadora de Médias da Univesp</h1>
-        <div>
-            <label for="nAva">Nota do Ava</label>
-            <input type="number" name="ava" id="nAva" min="0" max="10" step="0.1" required>
-            <output id="mAva"></output>
+        <h1>Médias Univesp</h1>
+        <div id="parte1">
+            <div id="notaDoAVA">
+                <label for="notaAva">Nota do Ava: </label>
+                <input type="number" name="ava" id="notaAva" min="0" max="10" step="0.1" required>
+                <output id="mediaAva"></output>
+            </div>
+            <div id="notaDaProva">
+                <label for="notaProva">Nota da Prova: </label>
+                <input type="number" name="prova" id="notaProva" min="0" max="10" step="0.1" required>
+                <output id="mediaProva"></output>
+            </div>
+            <div id="botaoCalc">
+                <button type="button" id="btnCalc">Calcular Média</button>
+            </div>
+            <div id="containerMediaParcial">
+                <output id="mediaParcial"></output>
+                <br>
+                <output id="situacao"></output>
+            </div>
         </div>
-        <div>
-            <label for="nProva">Nota da Prova</label>
-            <input type="number" name="prova" id="nProva" min="0" max="10" step="0.1" required>
-            <output id="mProva"></output>
+        <div id="parte2">
+            <div id="notaDoExame">
+                <label for="notaExame">Nota do Exame: </label>
+                <input type="number" name="exame" id="notaExame" min="0" max="10" required>
+            </div>
+            <div id="botaoFinal">
+                <button type="button" id="btnFinal">Calcular Média Final</button>
+            </div>
+            <div id="containerMediaFinal">
+                <output id="mediaFinal"></output>
+                <br>
+                <output id="situacaoFinal"></output>
+            </div>
         </div>
-        <div>
-            <button type="button" onclick="mediaAvaProva(), calcMedia()">Calcular Média</button>
-        </div>
-        <div id="container">
-            <output><strong>Média</strong>: <span id="media"></span></output>
-            <br>
-            <output><strong>Situação</strong>: <span id="situacao"></span></output>
-        </div>
-        <div id="container1">
-            <label for="nExame">Nota do Exame</label>
-            <input type="number" name="exame" id="nExame" min="0" max="10" required>
-        </div>
-        <div id="btn-mFinal">
-            <button type="button" onclick="calcMediaFinal()">Calcular Média Final</button>
-        </div>
-        <div id="container2">
-            <output><strong>Média Final</strong>: <span id="mediaFinal"></span></output>
-            <br>
-            <output><strong>Situação</strong>: <span id="situacaoFinal"></span></output>
+        <div id="atualizar">
+            <button id="reload">Novo Cálculo</button>
         </div>
     </div>
 
