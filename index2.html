@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="btn-inicial btn">
+        <h2>O que deseja calcular?</h2>
+        <button id="regular">Média Regular</button>
+        <button id="exame">Média após Exame</button>
+    </div>
+    <form action="">
+        <div>
+            <label for="notaAva">Nota do Ava</label>
+            <input type="number" name="ava" id="notaAva">
+            <output id="mAva"></output>
+        </div>
+
+        <div>
+            <label for="notaProva">Nota da Prova</label>
+            <input type="number" name="prova" id="notaProva">
+            <output id="mProva"></output>
+        </div>
+
+    
+    <div>
+        <input type="button" value="Calcular" id="calcular">  
+    </div>
+
+    <div>
+        <output id="md"></output>
+    </div>
+
+    </form>
+
+
+    <script>
+        const mAva = document.querySelector('#mAva');
+        const mProva = document.querySelector('#mProva');
+        const nAva = document.querySelector('#notaAva');
+        const nProva = document.querySelector('#notaProva');
+        const md = document.querySelector('#md');
+        const calcular = document.querySelector('#calcular').addEventListener('click', media); 
+
+        let mediaGeral = 0;
+        let mediaAva = 0;
+        let mediaProva = 0;
+
+        function media() {
+            mediaAva = Number(nAva.value * 0.4);
+            mAva.innerHTML = 'Média do Ava = ' + mediaAva + '<br>Obs.: Nota do Ava * 0,4';
+
+            mediaProva = Number(nProva.value * 0.6);    
+            mProva.innerHTML = 'Média da Prova = ' + mediaProva + '<br>Obs.: Nota da Prova * 0,6';
+
+            mediaGeral = mediaAva + mediaProva;
+            if (mediaGeral >= 5.0) {
+                md.innerHTML = 'Média final = ' + mediaGeral + '<br>Aprovado(a)!';
+            } else {
+                md.innerHTML = 'Média parcial = ' + mediaGeral + '<br>Exame!';
+            }
+        }
+            
+        
+    </script>
+</body>
+</html>
